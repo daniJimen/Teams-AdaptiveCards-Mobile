@@ -130,6 +130,15 @@ afterEvaluate {
         }
 
         repositories {
+            // Publish to github_packages Artifacts feed
+            maven {
+                name = "GitHubPackages"
+                url = "https://maven.pkg.github.com/daniJimen/Teams-AdaptiveCards-Mobile"
+                credentials {
+                    username = "${USER_GIT}"
+                    password = "${KEYSTORE_GIT}"
+                }
+            }
             // Publish to Azure Artifacts feed
             maven {
                 name = 'azuredevops'
